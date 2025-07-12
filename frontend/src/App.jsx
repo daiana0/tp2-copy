@@ -6,6 +6,7 @@ import theme from './theme';
 import Home from './pages/Home';
 import Categoria from './pages/Categoria';
 import DetalleCategoria from './pages/DetalleCategoria';
+import ProductoDetalle from './pages/ProductoDetalle';
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -15,6 +16,8 @@ const App = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/categorias" element={<Categoria/>}/>
         <Route path="/categorias/:id" element={<DetalleCategoria/>}/>
+        <Route path="/producto/:id" element={<ProductoDetalle/>}/>
+        
       </Routes>
       
     </ThemeProvider>

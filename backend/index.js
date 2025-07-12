@@ -7,6 +7,7 @@ import sequelize from "./src/db/connection.js";
 import administradorRoutes from "./src/routes/administradorRoutes.js";
 import categoriaRoutes from "./src/routes/categoriaRoutes.js";
 import productoRoutes from "./src/routes/productoRoutes.js";
+import mensajeRoutes from "./src/routes/mensajeRoutes.js";
 import clienteRoutes from "./src/routes/clienteRoutes.js";
 import direccionRoutes from "./src/routes/direccionRoutes.js";
 import carritoRoutes from "./src/routes/carritoRoutes.js";
@@ -16,6 +17,7 @@ import pedidoProductoRoutes from "./src/routes/pedidoProductoRoutes.js";
 import pagoRoutes from "./src/routes/pagoRoutes.js";
 import envioRoutes from "./src/routes/envioRoutes.js";
 import cuponDescuentoRoutes from "./src/routes/cuponDescuentoRoutes.js";
+import varianteRoutes from "./src/routes/varianteRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -39,6 +41,8 @@ app.use("/api/pedidos", pedidoRoutes);
 app.use("/api/pedidosproductos", pedidoProductoRoutes);
 app.use("/api/productos", productoRoutes);
 app.use("/api/cupones", cuponDescuentoRoutes);
+app.use(mensajeRoutes);
+app.use(varianteRoutes);
 
 // Sincronización con DB
 const syncOptions = RESET_DATABASE ? { force: true } : {};

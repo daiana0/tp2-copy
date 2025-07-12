@@ -6,9 +6,9 @@ import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Box from "@mui/material/Box";
 
-
+import { useNavigate } from "react-router-dom";
 const ProductCard = ({ producto }) => {
-  
+  const navigate = useNavigate
   const tieneOferta = producto.oferta;
   const tieneDescuento = producto.descuento > 0;
   const precioFinal = tieneDescuento
@@ -17,7 +17,10 @@ const ProductCard = ({ producto }) => {
 
   return (
     <Card
-      sx={{
+    onClick={() => navigate(`/producto/${producto.id}`)}
+  sx={{
+    cursor: "pointer",
+    
         width: 300,
         height: 400,
         display: "flex",
